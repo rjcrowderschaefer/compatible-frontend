@@ -23,23 +23,23 @@ function Header() {
                         <a className="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Browse Categories</a>
+                        <a className="nav-link" href="/browse-categories">Browse Categories</a>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="#">Create Offer</a>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Job Search</a>
+                        <a className="nav-link" href="/job-search">Job Search</a>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Learn More
                         </a>
                         <ul className="dropdown-menu">
-                            <li><a className="dropdown-item" href="#">FAQs</a></li>
-                            <li><a className="dropdown-item" href="#">Who We Are</a></li>
+                            <li><a className="dropdown-item" href="/faqs">FAQs</a></li>
+                            <li><a className="dropdown-item" href="/about">Who We Are</a></li>
                             <li><hr className="dropdown-divider" /></li>
-                            <li><a className="dropdown-item" href="#">Get In Touch</a></li>
+                            <li><a className="dropdown-item" href="/contact">Get In Touch</a></li>
                         </ul>
                     </li>
                     </ul>
