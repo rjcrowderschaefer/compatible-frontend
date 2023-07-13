@@ -15,7 +15,7 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/browser-categories' element={<BrowseCategories />} />
+            <Route path='/browse-categories' element={<BrowseCategories />} />
           </Routes>
           <Footer />
         </div>
