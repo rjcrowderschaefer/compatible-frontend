@@ -17,12 +17,6 @@ body {
 padding-top: 4.5rem;
 }
 
-/* #nav-img {
-  display: inline;
-  max-width: 5%;
-  height: auto;
-} */
-
 #nav-logo-name {
   color: #062315;
   font-size: 1.3rem;
@@ -44,20 +38,65 @@ padding-top: 4.5rem;
   border-style: none;
 }
 
+.nav-link {
+  color: #062315;
+}
+
+
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+  color: rgb(6 35 21);
+}
+
+.navbar {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.navbar-nav button {
+  background-color: #f8f9fa;
+  border-radius: 0px;
+  border: none;
+}
+
+.sign-up {
+  color: #062315
+}
+
+button {
+  padding-left: 0px;
+}
+
 @media only screen and (max-width: 480px) {
-  .navbar {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+  
+
 }
 
 /* Breakpoint for tablet: 481-768px */
 @media only screen and (min-width: 481px) {
-
+  
 }
 
 /* Breakpoint for small screens, laptops: 769-1024px */
-@media only screen and (min-width: 769px) {
+@media only screen and (min-width: 991px) {
+
+  .navbar-nav button {
+    background-color: #062315;
+    border-radius: 10px;
+    /* width: 90px;
+    height: auto; */
+    padding: 0;
+  }
+
+  .sign-up {
+    color: white;
+    padding: 5px 8px 5px 8px;
+    font-weight: bold;
+  }
+
+  .nav-auth {
+    display: flex;
+    align-items: center;
+  }
 
 }
 

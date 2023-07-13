@@ -43,12 +43,12 @@ function Header() {
                         </ul>
                     </li>
                     </ul>
-                    <ul class="navbar-nav ms-auto">
+                    <ul class="navbar-nav ms-aut nav-auth">
                     <li class="nav-item">
                         <a class="nav-link" href="#">Log In</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
+                        <button><a class="nav-link sign-up" href="#">Sign Up</a></button>
                     </li>
                     </ul>
         
