@@ -1,38 +1,67 @@
-.App {
-  text-align: center;
+/* Primary stying focused on mobile breakpoint: 320px - 480px */
+/* Mockup designed for 393px wide (pixel 5 responsive) */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  height: 100%;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  min-height: 75rem;
+padding-top: 4.5rem;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* #nav-img {
+  display: inline;
+  max-width: 5%;
+  height: auto;
+} */
+
+#nav-logo-name {
+  color: #062315;
+  font-size: 1.3rem;
+  font-family: 'Caprasimo', cursive;
+  padding-left: 5px;
+}
+
+.navbar-brand {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-toggler-icon {
+  width: 25px;
+  height: 25px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.navbar-toggler {
+  border-style: none;
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    padding-left: 10px;
+    padding-right: 10px;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* Breakpoint for tablet: 481-768px */
+@media only screen and (min-width: 481px) {
+
+}
+
+/* Breakpoint for small screens, laptops: 769-1024px */
+@media only screen and (min-width: 769px) {
+
+}
+
+/* Breakpoint for desktops, large screens: 1025+ px */
+@media only screen and (min-width: 1025px) {
+
 }
