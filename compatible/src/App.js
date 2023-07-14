@@ -8,6 +8,7 @@ import JobSearch from "./pages/JobSearch.js"
 import About from "./pages/About.js"
 import FAQs from "./pages/FAQs.js"
 import Contact from "./pages/Contact.js"
+import ContactConfirmation from "./pages/ContactConfirmation"
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -23,7 +24,10 @@ function App() {
             <Route path='/job-search' element={<JobSearch />} />
             <Route path='/about' element={<About />} />
             <Route path='/faqs' element={<FAQs />} />
-            <Route path='/contact' element={<Contact />} />
+            <Route path='/contact'>
+               <Route path='' element={<Contact />} />
+               <Route path='thank-you' element={<ContactConfirmation />} />
+            </Route>
           </Routes>
           <Footer />
         </div>

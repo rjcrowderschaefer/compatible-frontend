@@ -5,3 +5,9 @@ export const categoriesLoader = async () => {
     const categories = await response.json()
     return categories;
 }
+
+export const contactLoader = async () => {
+    const response = await fetch(URL + "/api/feedbacks/");
+    const contacts = await response.json()
+    return contacts;
+}

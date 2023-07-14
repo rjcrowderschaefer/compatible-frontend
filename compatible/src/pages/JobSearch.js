@@ -77,8 +77,6 @@ function JobSearch() {
     };
 
     const handleChange = (e) => {
-        // setKeyword(e.target.value)
-        // setLocation(e.target.value)
         setKeyword('');
         setLocation('');
     }
