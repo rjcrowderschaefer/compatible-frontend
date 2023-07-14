@@ -29,10 +29,10 @@ function CategoryDetails() {
                     <img src={category.category_img1}></img>
                     <img src={category.category_img2}></img>
                     <img src={category.category_img3}></img>
-                    <h4>Active offers: {category.active_offer_total}</h4>
+                    <h4>Active listings: {category.active_listing_total}</h4>
                     <hr />
-                    List of active offers (linked to)<br />
-                    Add new offer link to offer create form
+                    List of active listings (linked to)<br />
+                    Add new listing link to listing create form
                 </div>
             </>
         )

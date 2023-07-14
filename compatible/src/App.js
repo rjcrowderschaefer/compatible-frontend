@@ -3,13 +3,15 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
-import BrowseCategories from "./pages/BrowseCategories"
-import JobSearch from "./pages/JobSearch.js"
-import About from "./pages/About.js"
-import FAQs from "./pages/FAQs.js"
-import Contact from "./pages/Contact.js"
-import ContactConfirmation from "./pages/ContactConfirmation"
-import CategoryDetail from "./pages/CategoryDetail"
+import BrowseCategories from "./pages/BrowseCategories";
+import JobSearch from "./pages/JobSearch.js";
+import About from "./pages/About.js";
+import FAQs from "./pages/FAQs.js";
+import Contact from "./pages/Contact.js";
+import ContactConfirmation from "./pages/ContactConfirmation";
+import CategoryDetail from "./pages/CategoryDetail";
+import BrowseListings from "./pages/BrowseListings";
+import ListingDetail from  "./pages/ListingDetail";
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -24,6 +26,10 @@ function App() {
             <Route path='/categories'>
               <Route path='' element={<BrowseCategories />} />
               <Route path=':id' element={<CategoryDetail />} />
+            </Route>
+            <Route path='/listings'>
+              <Route path='' element={<BrowseListings />} />
+              <Route path=':id' element={<ListingDetail />} />
             </Route>
             <Route path='/job-search' element={<JobSearch />} />
             <Route path='/about' element={<About />} />

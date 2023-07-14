@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { contactLoader } from '../apiCalls';
+import { feedbackLoader } from '../apiCalls';
 
 function ContactUs(props) {
     const navigate = useNavigate();
@@ -12,7 +12,7 @@ function ContactUs(props) {
     
     async function getContactInfo() {
         try {
-            let myContactSubmissions = await contactLoader()
+            let myContactSubmissions = await feedbackLoader()
             myContactSubmissions = await myContactSubmissions.json();
         } catch(err) {
             console.log(err);

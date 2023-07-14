@@ -22,11 +22,26 @@ function Header() {
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href="/">Home</a>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="/categories">Browse Categories</a>
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categories
+                        </a>
+                        <ul className="dropdown-menu">
+                            <li><a className="dropdown-item" href="/categories">All Categories</a></li>
+                            <hr className="dropdown-divider" />
+                            <li><a className="dropdown-item" href="/categories/1">Languages</a></li>
+                            <li><a className="dropdown-item" href="/categories/2">Cooking</a></li>
+                        </ul>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" href="#">Create Offer</a>
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Listings
+                        </a>
+                        <ul className="dropdown-menu">
+                            <li><a className="dropdown-item" href="/listings">All Listings</a></li>
+                            <hr className="dropdown-divider" />
+                            <li><a className="dropdown-item" href="#">Create Listing</a></li>
+                        </ul>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link" href="/job-search">Job Search</a>

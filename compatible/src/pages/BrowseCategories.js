@@ -1,20 +1,6 @@
 import { useEffect, useState } from 'react';
 import { categoriesLoader } from '../apiCalls';
 
-// function BrowseCategories() {
-//     const [categories, setCategories] = useState([])
-    
-//     useEffect(() => {
-//         getData()
-//     }, [])
-    
-// const getData = async () => {
-//     const categoriesResponse = await fetch('http://localhost:8000/api/categories/')
-//     const categoriesData = await categoriesResponse.json()
-//     setCategories(categoriesData)
-
-// }
-
 function BrowseCategories() {
     const [categoryInfo, setCategoryInfo] = useState([])
 
@@ -22,7 +8,6 @@ function BrowseCategories() {
         const fetchCategories = async () => {
             try {
                 const data = await categoriesLoader()
-                // const data = await categoryResponse.json()
                 setCategoryInfo(data)
                 console.log(data)
             } catch(err) {
