@@ -9,6 +9,7 @@ import About from "./pages/About.js"
 import FAQs from "./pages/FAQs.js"
 import Contact from "./pages/Contact.js"
 import ContactConfirmation from "./pages/ContactConfirmation"
+import CategoryDetail from "./pages/CategoryDetail"
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
@@ -20,7 +21,10 @@ function App() {
           <Header />
           <Routes>
             <Route path='/' element={<Home />} />
-            <Route path='/browse-categories' element={<BrowseCategories />} />
+            <Route path='/categories'>
+              <Route path='' element={<BrowseCategories />} />
+              <Route path=':id' element={<CategoryDetail />} />
+            </Route>
             <Route path='/job-search' element={<JobSearch />} />
             <Route path='/about' element={<About />} />
             <Route path='/faqs' element={<FAQs />} />
