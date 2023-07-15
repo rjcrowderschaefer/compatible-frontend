@@ -24,9 +24,9 @@ function BrowseListings() {
         <h2>Add link to create new listing</h2>
         <div className="listings">
             {
-                listingInfo && listingInfo.map(listing => {
+                listingInfo && listingInfo.map((listing, idx) => {
                     return (
-                        <div className="listing-card">
+                        <div className="listing-card" key={idx}>
                         <img src={listing.listing_img1} alt="listing image"></img><br />
                         {listing.listing_name}<br />
                         {listing.listing_type}<br />

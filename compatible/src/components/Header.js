@@ -7,7 +7,7 @@ function Header(props) {
 
 //   const toggle = () => setIsOpen(!isOpen);
 
-    const CategoriesLis = () => {
+    const CategoriesList = () => {
         let categoryList = []
         for (let i=0; i < categories.length; i++) {
             let category = categories[i]
@@ -43,7 +43,7 @@ function Header(props) {
                         <ul className="dropdown-menu">
                             <li><a className="dropdown-item" href="/categories">All Categories</a></li>
                             <hr className="dropdown-divider" />
-                                {<CategoriesLis />}
+                                {<CategoriesList />}
                         </ul>
                     </li>
                     <li className="nav-item dropdown">
@@ -53,7 +53,7 @@ function Header(props) {
                         <ul className="dropdown-menu">
                             <li><a className="dropdown-item" href="/listings">All Listings</a></li>
                             <hr className="dropdown-divider" />
-                            <li><a className="dropdown-item" href="#">Create Listing</a></li>
+                            <li><a className="dropdown-item" href="/listings/new">Create Listing</a></li>
                         </ul>
                     </li>
                     <li className="nav-item">
