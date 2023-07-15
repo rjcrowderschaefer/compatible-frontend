@@ -55,17 +55,17 @@ function ContactUs(props) {
                     <div className="form-group">
                         <div className="row">
                             <div className="col">
-                                <label for="name">Full Name:</label>
+                                <label htmlFor="name">Full Name:</label>
                                 <input type="text" className="form-control" name="name" onChange={handleChange} placeholder="What's your full name?"/>
                             </div>
                             <div className="col">
-                                <label for="email">Email Address:</label>
-                                <input type="text" className="form-control" name="email" onChange={handleChange} placeholder="What's your email address?"/>
+                                <label htmlFor="email">Email Address:</label>
+                                <input type="email" className="form-control" name="email" onChange={handleChange} placeholder="What's your email address?"/>
                             </div>
                         </div>
                         <div className="row">
                             <div className="col">
-                            <label for="feedback"></label>
+                            <label htmlFor="feedback"></label>
                             <textarea className="form-control" name="feedback" rows="3" onChange={handleChange} placeholder="We'd love to hear from you. What do you want to share?"/><br />
                             <button type="submit" className="button">Submit</button>
                             </div>

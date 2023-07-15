@@ -1,9 +1,23 @@
 import React, { useState } from 'react';
 
-function Header() {
+function Header(props) {
+    const categories = props.categories
+    console.log(categories)
 //   const [isOpen, setIsOpen] = useState(false);
 
 //   const toggle = () => setIsOpen(!isOpen);
+
+    const CategoriesLis = () => {
+        let categoryList = []
+        for (let i=0; i < categories.length; i++) {
+            let category = categories[i]
+            let href = "/categories/" + category.id
+            categoryList.push(
+                <li key={i}><a className="dropdown-item" href={href}>{category.category_name}</a></li>
+            )
+        }
+        return categoryList;
+    }
 
   return (
     <>
@@ -29,8 +43,7 @@ function Header() {
                         <ul className="dropdown-menu">
                             <li><a className="dropdown-item" href="/categories">All Categories</a></li>
                             <hr className="dropdown-divider" />
-                            <li><a className="dropdown-item" href="/categories/1">Languages</a></li>
-                            <li><a className="dropdown-item" href="/categories/2">Cooking</a></li>
+                                {<CategoriesLis />}
                         </ul>
                     </li>
                     <li className="nav-item dropdown">

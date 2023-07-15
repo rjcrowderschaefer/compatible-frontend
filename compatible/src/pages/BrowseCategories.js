@@ -23,9 +23,9 @@ function BrowseCategories() {
         <h1>Browse Categories Page</h1>
         <div className="categories">
             {
-                categoryInfo && categoryInfo.map(category => {
+                categoryInfo && categoryInfo.map((category, idx) => {
                     return (
-                        <div className="category-card">
+                        <div className="category-card" key={idx}>
                         {category.category_name}<br />
                         {category.category_description}
                         </div>

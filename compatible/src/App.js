@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect } from 'react';
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -12,15 +12,36 @@ import ContactConfirmation from "./pages/ContactConfirmation";
 import CategoryDetail from "./pages/CategoryDetail";
 import BrowseListings from "./pages/BrowseListings";
 import ListingDetail from  "./pages/ListingDetail";
+import ListingNew from "./pages/ListingNew";
+// import ListingEdit from "./pages/ListingEdit";
+// import ListingDelete from "./pages/ListingDelete";
 import { Route, Routes } from 'react-router-dom';
+import { categoriesLoader } from './apiCalls';
 
 function App() {
   
+  const [categories, setCategories] = useState([]) 
+
+  async function getCategories() {
+    try {
+        let categoryList = await categoriesLoader();
+        setCategories(categoryList)
+        console.log(categoryList)
+    } catch(err) {
+        console.log(err)
+    }
+}
+
+  useEffect(() => {
+    getCategories();
+  }, []);
+
+
   return (
     <>
       <main>
         <div className="content-container">
-          <Header />
+          <Header categories={categories}/>
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/categories'>
@@ -29,7 +50,12 @@ function App() {
             </Route>
             <Route path='/listings'>
               <Route path='' element={<BrowseListings />} />
-              <Route path=':id' element={<ListingDetail />} />
+              <Route path='new' element={<ListingNew categories={categories} />} />
+              <Route path=':id'> 
+                <Route path='' element={<ListingDetail />} />
+                {/* <Route path='edit' element={<ListingEdit />} />
+                <Route path="delete" element={<ListingDelete />} /> */}
+              </Route>
             </Route>
             <Route path='/job-search' element={<JobSearch />} />
             <Route path='/about' element={<About />} />
