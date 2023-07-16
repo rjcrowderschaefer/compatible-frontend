@@ -12,6 +12,12 @@ export const listingsLoader = async () => {
     return listings;
 }
 
+export const featuredListsLoader = async () => {
+    const response = await fetch(URL + "/api/featuredlists/");
+    const featuredLists = await response.json()
+    return featuredLists;
+}
+
 export const feedbackLoader = async () => {
     const response = await fetch(URL + "/api/feedbacks/");
     const contacts = await response.json()

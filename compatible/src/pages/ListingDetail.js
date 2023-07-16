@@ -5,35 +5,37 @@ import { listingsLoader } from '../apiCalls';
 
 function ListingDetails(props) {
     const categories = props.categories
-    const {id} = useParams();
+    const { id } = useParams();
     const [listing, setListing] = useState(null)
     const fetchListingDetails = async () => {
         try {
-            let data = await fetch (`http://localhost:8000/api/listings/${id}/`)
+            let data = await fetch(`http://localhost:8000/api/listings/${id}/`)
             data = await data.json();
             setListing(data);
-        } catch(err) {
+        } catch (err) {
             console.log(err)
         }
     }
-    
+
     useEffect(() => {
         fetchListingDetails();
     }, [])
-    
+
     const Categories = () => {
-        let categoryName = ''
-        for (let i=0; i < categories.length; i++) {
-            let category = categories[i]
-            categoryName = category.category_name
+        if (listing) {
+            for (let i = 0; i < categories.length; i++) {
+                if (categories[i].id === listing.category) {
+                    return categories[i].category_name
+                }
+            }
         }
-        return categoryName;
+        return null;
     }
     console.log(Categories())
-    
-    
-    
-    
+
+
+
+
     function loaded() {
         return (
             <>
@@ -48,15 +50,15 @@ function ListingDetails(props) {
                     <h4>{listing.listing_status}</h4>
                     <h4>{listing.created_at}</h4>
                     <h4>Listing category: <Categories /></h4>
-                    
+
                     <div className="modify-trip">
-                            <Link to={`/listings/${id}/edit`}>
-                                <button>Edit</button>
-                            </Link>
-                            <Link to={`/listings/${id}/delete`}>
-                                <button>Delete</button>
-                            </Link>
-                        </div>
+                        <Link to={`/listings/${id}/edit`}>
+                            <button>Edit</button>
+                        </Link>
+                        <Link to={`/listings/${id}/delete`}>
+                            <button>Delete</button>
+                        </Link>
+                    </div>
 
                     <hr />
                     List of related listings by category (carousel linked to?)<br />
