@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { listingsLoader } from '../apiCalls';
 
-function ListingDetails() {
-
+function ListingDetails(props) {
+    const categories = props.categories
     const {id} = useParams();
     const [listing, setListing] = useState(null)
     const fetchListingDetails = async () => {
@@ -20,6 +20,16 @@ function ListingDetails() {
         fetchListingDetails();
     }, [])
 
+    const Categories = () => {
+        let categoryName = ''
+        for (let i=0; i < categories.length; i++) {
+            let category = categories[i]
+            categoryName = category.category_name
+        }
+        return categoryName;
+    }
+    console.log(Categories())
+
     function loaded() {
         return (
             <>
@@ -33,7 +43,7 @@ function ListingDetails() {
                     <h4>{listing.listing_comp_type}</h4>
                     <h4>{listing.listing_status}</h4>
                     <h4>{listing.created_at}</h4>
-                    <h4>{listing.category}</h4>
+                    <h4>Listing category: <Categories /></h4>
                     
                     <hr />
                     List of related listings by category (carousel linked to?)<br />

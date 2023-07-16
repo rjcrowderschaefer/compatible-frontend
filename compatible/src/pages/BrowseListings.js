@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { listingsLoader } from '../apiCalls';
 
-function BrowseListings() {
+function BrowseListings(props) {
+    const categories = props.categories
     const [listingInfo, setListingInfo] = useState([])
 
     useEffect(() => {
@@ -31,7 +32,7 @@ function BrowseListings() {
                         {listing.listing_name}<br />
                         {listing.listing_type}<br />
                         {listing.listing_status}<br />
-                        {listing.category}<br />
+                        {listing.category_name}<br />
                         </div>
                     )
                 })

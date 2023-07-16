@@ -1,13 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { categoriesLoader, listingsLoader } from '../apiCalls';
 
 function CreateListing(props) {
     const categories = props.categories
-    console.log(categories)
-    
     const navigate = useNavigate();
-    // const [category, setCategoryInfo] = useState([])
     const [errorMessages, setErrorMessages] = useState({})
     const [listingForm, setListingForm] = useState({
         listing_name: "",
@@ -48,15 +44,11 @@ function CreateListing(props) {
 
     const handleChange = (e) => {
         setListingForm({ ...listingForm, [e.target.name]: e.target.value});
-        console.log(e.target)
-        console.log(e.target.name)
-        console.log(e.target.value)
     };
 
     const handleCategoryChange = (e) => {
         setListingForm({ ...listingForm, category: e.target.value})
-        console.log(e.target.value)
-    }
+    };
 
 
     const validateSelect = () => {
