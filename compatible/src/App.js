@@ -48,13 +48,13 @@ function App() {
               <Route path='' element={<BrowseCategories />} />
               <Route path=':id' element={<CategoryDetail />} />
             </Route>
-            <Route path='/listings'>
+            <Route path='/listings' >
               <Route path='' element={<BrowseListings categories={categories} />} />
               <Route path='new' element={<ListingNew categories={categories} />} />
               <Route path=':id'> 
                 <Route path='' element={<ListingDetail categories={categories}/>} />
-                <Route path='edit' element={<ListingEdit />} />
-                {/* <Route path="delete" element={<ListingDelete />} /> */}
+                <Route path='edit' element={<ListingEdit categories={categories}/>} />
+                {/* <Route path="delete" element={<ListingDelete categories={categories}/>} /> */}
               </Route>
             </Route>
             <Route path='/job-search' element={<JobSearch />} />

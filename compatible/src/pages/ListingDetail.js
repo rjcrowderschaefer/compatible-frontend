@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { Link } from 'react-router-dom'
 import { listingsLoader } from '../apiCalls';
 
 function ListingDetails(props) {
@@ -45,6 +46,15 @@ function ListingDetails(props) {
                     <h4>{listing.created_at}</h4>
                     <h4>Listing category: <Categories /></h4>
                     
+                    <div className="modify-trip">
+                            <Link to={`/listings/${id}/edit`}>
+                                <button>Edit</button>
+                            </Link>
+                            <Link to={`/listings/${id}/delete`}>
+                                <button>Delete</button>
+                            </Link>
+                        </div>
+
                     <hr />
                     List of related listings by category (carousel linked to?)<br />
                     Add links to edit, delete listing
