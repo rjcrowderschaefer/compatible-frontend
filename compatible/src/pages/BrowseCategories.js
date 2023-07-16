@@ -26,7 +26,7 @@ function BrowseCategories() {
                 categoryInfo && categoryInfo.map((category, idx) => {
                     return (
                         <div className="category-card" key={idx}>
-                        {category.category_name}<br />
+                        <a href={`/categories/${category.id}`}>{category.category_name}</a><br />
                         {category.category_description}
                         </div>
                     )

@@ -14,7 +14,7 @@ import BrowseListings from "./pages/BrowseListings";
 import ListingDetail from  "./pages/ListingDetail";
 import ListingNew from "./pages/ListingNew";
 import ListingEdit from "./pages/ListingEdit";
-// import ListingDelete from "./pages/ListingDelete";
+import ListingDelete from "./pages/ListingDelete";
 import { Route, Routes } from 'react-router-dom';
 import { categoriesLoader } from './apiCalls';
 
@@ -54,7 +54,7 @@ function App() {
               <Route path=':id'> 
                 <Route path='' element={<ListingDetail categories={categories}/>} />
                 <Route path='edit' element={<ListingEdit categories={categories}/>} />
-                {/* <Route path="delete" element={<ListingDelete categories={categories}/>} /> */}
+                <Route path="delete" element={<ListingDelete categories={categories}/>} />
               </Route>
             </Route>
             <Route path='/job-search' element={<JobSearch />} />

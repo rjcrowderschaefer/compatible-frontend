@@ -33,6 +33,7 @@ function BrowseListings(props) {
                         {listing.listing_type}<br />
                         {listing.listing_status}<br />
                         {listing.category_name}<br />
+                        <h4><a href={`/listings/${listing.id}`}>View details</a></h4>
                         </div>
                     )
                 })

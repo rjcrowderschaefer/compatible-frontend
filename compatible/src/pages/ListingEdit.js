@@ -40,8 +40,8 @@ function ListingEdit(props) {
     };
 
     async function handleSubmit(e) {
+        e.preventDefault();
         try {
-            e. preventDefault();
             await fetch (`http://localhost:8000/api/listings/${id}/`, {
                 method: "PUT",
                 headers: {
@@ -55,18 +55,27 @@ function ListingEdit(props) {
         }
     }
 
+    // const Categories = () => {
+    //     let categoryList = [
+    //         // <option name="category" key="-1" value="0">-- select an option --</option>
+    //     ]
+    //     for (let i=0; i < categories.length; i++) {
+    //         let category = categories[i]
+    //         categoryList.push(
+    //             <option key={i} name="category" value={category.id}>{category.category_name}</option>
+    //         )
+    //     }
+    //     return categoryList;
+    // }
+
     const Categories = () => {
-        let categoryList = [
-            // <option name="category" key="-1" value="0">-- select an option --</option>
-        ]
-        for (let i=0; i < categories.length; i++) {
-            let category = categories[i]
-            categoryList.push(
-                <option key={i} name="category" value={category.id}>{category.category_name}</option>
-            )
-        }
-        return categoryList;
-    }
+        return categories.map((category) => (
+          <option key={category.id} name="category" value={category.id}>
+            {category.category_name}
+          </option>
+        ));
+      };
+      
 
     function loaded() {
         return (

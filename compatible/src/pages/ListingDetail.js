@@ -16,11 +16,11 @@ function ListingDetails(props) {
             console.log(err)
         }
     }
-
+    
     useEffect(() => {
         fetchListingDetails();
     }, [])
-
+    
     const Categories = () => {
         let categoryName = ''
         for (let i=0; i < categories.length; i++) {
@@ -30,7 +30,10 @@ function ListingDetails(props) {
         return categoryName;
     }
     console.log(Categories())
-
+    
+    
+    
+    
     function loaded() {
         return (
             <>
