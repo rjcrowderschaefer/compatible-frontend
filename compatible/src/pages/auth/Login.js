@@ -28,7 +28,7 @@ const Login = () => {
         setLoading(false);
         if (data.key) {
           localStorage.setItem('token', data.key);
-          window.location.replace('http://localhost:3000/dashboard');
+          window.location.replace('http://localhost:3000/');
         } else {
           setEmail('');
           setPassword('');
