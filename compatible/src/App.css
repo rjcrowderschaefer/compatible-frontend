@@ -42,7 +42,6 @@ padding-top: 4.5rem;
   color: #062315;
 }
 
-
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
   color: rgb(6 35 21);
 }
@@ -64,6 +63,11 @@ padding-top: 4.5rem;
 
 button {
   padding-left: 0px;
+}
+
+.home-hero {
+  background-color: #EE9275;
+  background: rgba(238,146,117,0.7); 
 }
 
 @media only screen and (max-width: 480px) {

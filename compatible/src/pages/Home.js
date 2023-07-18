@@ -10,7 +10,7 @@ function Home() {
                 const data = await featuredListsLoader()
                 setFeaturedList(data)
                 console.log(data)
-            } catch(err) {
+            } catch (err) {
                 console.log(err);
             }
         }
@@ -20,19 +20,19 @@ function Home() {
 
     return (
         <>
-        <h1>Featured Listings</h1>
-        <div className="featured-listings">
-            {
-                featuredList && featuredList.map((list, idx) => {
-                    return (
-                        <div className="category-card" key={idx}>
-                        {list.name}<br />
-                        {list.listings}
-                        </div>
-                    )
-                })
-            }
-        </div>
+            <h1 className="home-hero">Gain knowledge by sharing knowledge</h1>
+            <div className="featured-listings">
+                {
+                    featuredList && featuredList.map((list, idx) => {
+                        return (
+                            <div className="category-card" key={idx}>
+                                {list.name}<br />
+                                {list.listings}
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </>
     )
 }
