@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Compatible
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Compatible is a full stack web application that provides the end user with a platform to search for job openings and discover and connect with other end users to share & swap knowledge and skills. In a world of constant discovery, the ability to share & swap knowledge, especially across different generations, is invaluable and has tangental benefits such a social engagement and community development. The core functionality of the application will include:
 
-## Available Scripts
+1. Search and discover skills to learn via category and direct-to-listing
+2. Create new listings to offer skills in return for various compenstation types (skill swap, paid, free, etc)
+3. Search for open job positions via Indeed Jobs API
+4. Browse to get information on Compatable and submit feedback/questions via the contact form
 
-In the project directory, you can run:
+Frontend URL: [Compatible](https://delicate-bunny-a4e853.netlify.app/)
 
-### `npm start`
+Backend URL: [Compatible - Backend](https://compatible-backend.onrender.com/api)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![Screenshot of Compatible home page (mobile)](https://i.imgur.com/iN1fe8e.png)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Main site nav & details:
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### MVP Features:
+1. **Home** - Welcome page with quick info, featured listings and instructions on how to use the site
+2. **Categories** - A list of primary categories used to organize listing by common theme, includes index and show pages.
+3. **Listings** - A full list of all listings, with the option to view by index or show page, as well as the option to create a new listing and edit or delete an existing listing.
+4. **Job Search** - Using Indeed's Jobs API, returns up to 15 active job listings based on keyword and location search (USA only)
+5. **FAQs** - A list of frequently asked questions and answers to ensure the end user has the best possible experience using the platform.
+6. **About** - Overview of the platform and company
+7. **Contact** - Information to connect with site admins, including general information submission form
 
-### `npm run build`
+### Stretch Features To Implement:
+1. **User Auth** - Login and signup functionality along with gated access to the full platform
+2. **Search Functionality** - Ability to search for listings by keyword from the search bar on the home page
+3. **Explore Categories** - Option to select the explore category buttons on the homepage
+4. **FAQ Page** - Build FAQ page
+5. **Who We Are Page** - Build Who We Are page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The full stack application leverages the following technologies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* React
+* Django REST framework
+* Postgresql
+* Node
+* Bootstrap
+* CSS Grid
+* [FontAwesome](https://fontawesome.com/) (icons)
