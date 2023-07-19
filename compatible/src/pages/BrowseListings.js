@@ -28,7 +28,7 @@ function BrowseListings(props) {
                     listingInfo && listingInfo.map((listing, idx) => {
                         return (
                             <div className="listing-card-wrapper" key={idx}>
-                                <img className="category-detail-img" src={listing.listing_img1} alt="listing image"></img><br />
+                                <img className="category-detail-img" src={listing.listing_img1} alt="listing image"/><br />
                                 <div className="listing-card-details">
                                     <span className="listing-name">{listing.listing_name}</span><br />
                                     <span className="listing-detail">Request Type: {listing.listing_type}</span><br />
