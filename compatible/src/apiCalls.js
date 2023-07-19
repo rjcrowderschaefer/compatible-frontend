@@ -61,7 +61,7 @@ export const listingsEditLoader = async (id, listing) => {
 }
 
 export const featuredListsLoader = async () => {
-    const response = await fetch(URL + "/api/featuredlists/");
+    const response = await fetch(URL + "/api/featuredlists/4/");
     const featuredLists = await response.json()
     return featuredLists;
 }

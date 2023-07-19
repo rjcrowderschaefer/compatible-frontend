@@ -42,7 +42,7 @@ function Footer(props) {
                             <div className="footer-section-title">
                                 Company
                                 <div className="footer-links">
-                                    <a href="/about-us" className="footer-link">About Us</a>
+                                    <a href="/about" className="footer-link">About Us</a>
                                     <a href="/faqs" className="footer-link">FAQs</a>
                                     <a href="/contact-us" className="footer-link">Contact Us</a>
                                 </div>

@@ -20,7 +20,7 @@ function Header(props) {
     return (
         <>
             <div>
-                <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary">
+                <nav className="navbar fixed-top navbar-expand-lg bg-body-tertiary" style={{backgroundColor: '#FDF9F8'}}>
                     <div className="container-fluid">
                         <a className="navbar-brand" href="/">
                             <img id="nav-img" src="https://i.imgur.com/VuMuUB6.png" width="30" height="30" alt="compatible logo image" className="d-inline-block align-text-top"></img>

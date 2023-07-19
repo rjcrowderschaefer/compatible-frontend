@@ -19,11 +19,12 @@ import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 import Logout from './pages/auth/Logout';
 import { Route, Routes } from 'react-router-dom';
-import { categoriesLoader } from './apiCalls';
+import { categoriesLoader, listingsLoader } from './apiCalls';
 
 function App() {
 
   const [categories, setCategories] = useState([])
+  const [listings, setListings] = useState([])
   const [user, setUser] = useState(null)
 
   async function getCategories() {
@@ -36,8 +37,19 @@ function App() {
     }
   }
 
+  async function getListings() {
+    try {
+      let listingsList = await listingsLoader();
+      setListings(listingsList)
+      console.log(listingsList)
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
   useEffect(() => {
     getCategories();
+    getListings();
   }, []);
 
   return (
@@ -46,7 +58,7 @@ function App() {
         <div id="content-wrap">
           <Header categories={categories} user={user} />
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home listings={listings}/>} />
             <Route path='/categories'>
               <Route path='' element={<BrowseCategories />} />
               <Route path=':id' element={<CategoryDetail />} />
