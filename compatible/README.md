@@ -43,3 +43,15 @@ The full stack application leverages the following technologies:
 * Bootstrap
 * CSS Grid
 * [FontAwesome](https://fontawesome.com/) (icons)
+
+## Getting Started/Installation Instructions
+
+The end user can navigate to the Compatible website to begin using the application immediately. Beyond the content included in the site itself, the primary user functionality includes the following areas:
+
+* Browse and discover community listings for skills to learn or skills to share - The end user can browse existing listings (including the option to modify or delete an existing listing) or create their own listing to include in the full list of active listings.
+* Search for US-based jobs - The end user can enter in a job title keyword and location (city or state in the United States) and see 15 applicable active job postings returned to them.
+* Feedback - The end user can fill out and submit a feedback form to ask questions or provide general comments on the site and functionality.
+
+## Contribution Guidelines
+
+Contributions to the site are welcome. Please fork and clone this repo and submit any changes for review via dev brench pull requests.
