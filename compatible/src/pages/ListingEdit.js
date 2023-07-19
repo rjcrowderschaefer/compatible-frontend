@@ -6,20 +6,20 @@ import { listingsEditLoader } from '../apiCalls';
 
 function ListingEdit(props) {
     const categories = props.categories
-    const {id} = useParams();
+    const { id } = useParams();
     const [listing, setListing] = useState(null);
     const navigate = useNavigate();
-    
+
     async function getListing() {
         try {
             let myListing = await listingsDetailLoader(id);
             setListing(myListing)
-            console.log(myListing) 
-        } catch(err) {
+            console.log(myListing)
+        } catch (err) {
             console.log(err)
         }
     }
-    
+
     useEffect(() => {
         getListing();
     }, []);
@@ -43,7 +43,7 @@ function ListingEdit(props) {
         try {
             await listingsEditLoader(id, listing)
             return navigate(`/listings/${id}`)
-        } catch(err) {
+        } catch (err) {
             console.log(err)
         }
     }
@@ -63,12 +63,12 @@ function ListingEdit(props) {
 
     const Categories = () => {
         return categories.map((category) => (
-          <option key={category.id} name="category" value={category.id}>
-            {category.category_name}
-          </option>
+            <option key={category.id} name="category" value={category.id}>
+                {category.category_name}
+            </option>
         ));
-      };
-      
+    };
+
 
     function loaded() {
         return (
@@ -77,81 +77,73 @@ function ListingEdit(props) {
                     <p className="page-intro">Use the form below to create a new listing to connect with our community to learn or share your skills!</p>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <div className="row">
-                                <div className="col">
-                                    <label htmlFor="Listing name">Listing Name</label>
-                                    <input type="text" className="form-control" name="listing_name" onChange={handleChange} value={listing.listing_name} />
-                                </div>
-                                <div className="col">
-                                <label htmlFor="Listing description">Description</label>
-                                    <textarea className="form-control" name="listing_description" rows="3" onChange={handleChange} value={listing.listing_description} />
-                                </div>
-                                <div className="col">
-                                    <label htmlFor="Listing img1">Listing image 1</label>
-                                    <input type="text" className="form-control" name="listing_img1" onChange={handleChange} value={listing.listing_img1} />
-                                </div>
-                                <div className="col">
-                                    <label htmlFor="Listing img2">Listing image 2</label>
-                                    <input type="text" className="form-control" name="listing_img2" onChange={handleChange} value={listing.listing_img2} />
-                                </div>
-                                <div className="col">
-                                    <label htmlFor="Listing img3">Listing image 3</label>
-                                    <input type="text" className="form-control" name="listing_img3" onChange={handleChange} value={listing.listing_img3} />
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="col">
-                                    <label htmlFor="Listing type">Listing Type</label>
-                                    <select className="form-control" name="listing_type" onChange={handleChange} placeholder={listing.listing_type}>
-                                        {/* <option hidden> -- select an option -- </option> */}
-                                        <option value="Skill">Skill</option>
-                                        <option value="Need">Need</option>
-                                    </select>
-                                </div>
-                                <div className="col">
-                                    <label htmlFor="Listing comp type">Type of Compensation</label>
-                                    <select className="form-control" name="listing_comp_type" onChange={handleChange} value={listing.listing_comp_type}>
-                                        {/* <option hidden> -- select an option -- </option> */}
-                                        <option value="Skill Swap/Trade">Skill Swap/Trade</option>
-                                        <option value="Paid/Fee-based">Paid/Fee-based</option>
-                                        <option value="Free/No charge">Free/No charge</option>
-                                        <option value="I\'m Flexible!">I'm Flexible!</option>
-                                    </select>
-                                </div>
-                                <div className="col">
-                                    <label htmlFor="Listing status">Status</label>
-                                    <select className="form-control" name="listing_status" onChange={handleChange} value={listing.listing_status}>
-                                        {/* <option hidden> -- select an option -- </option> */}
-                                        <option value="Active">Active</option>
-                                        <option value="In Progress">In Progress</option>
-                                        <option value="Completed">Completed</option>
-                                        <option value="Withdrawn">Withdrawn</option>
-                                        <option value="Inactive">Inactive</option>
-                                    </select>
-                                </div>
-                                <div className="col">
-                                {/* <p>{errorMessages.category ? errorMessages.category : null}</p> */}
-                                <label htmlFor="Category">Category</label>
-                                <select className="form-control" name="category" value={listing.category} onChange={handleCategoryChange}>
-                                
+
+
+                            <label className="listing-edit-form-label" htmlFor="Listing name">Listing Name</label>
+                            <input type="text" className="form-control" name="listing_name" onChange={handleChange} value={listing.listing_name} />
+
+
+                            <label className="listing-edit-form-label" htmlFor="Listing description">Description</label>
+                            <textarea className="form-control" name="listing_description" rows="3" onChange={handleChange} value={listing.listing_description} />
+
+
+                            <label className="listing-edit-form-label" htmlFor="Listing img1">Listing image 1</label>
+                            <input type="text" className="form-control" name="listing_img1" onChange={handleChange} value={listing.listing_img1} />
+
+
+                            <label className="listing-edit-form-label" htmlFor="Listing img2">Listing image 2</label>
+                            <input type="text" className="form-control" name="listing_img2" onChange={handleChange} value={listing.listing_img2} />
+
+                            <label className="listing-edit-form-label" htmlFor="Listing img3">Listing image 3</label>
+                            <input type="text" className="form-control" name="listing_img3" onChange={handleChange} value={listing.listing_img3} />
+
+
+                            <label className="listing-edit-form-label" htmlFor="Listing type">Listing Type</label>
+                            <select className="form-control" name="listing_type" onChange={handleChange} placeholder={listing.listing_type}>
+                                {/* <option hidden> -- select an option -- </option> */}
+                                <option value="Skill">Skill</option>
+                                <option value="Need">Need</option>
+                            </select>
+
+                            <label className="listing-edit-form-label" htmlFor="Listing comp type">Type of Compensation</label>
+                            <select className="form-control" name="listing_comp_type" onChange={handleChange} value={listing.listing_comp_type}>
+                                {/* <option hidden> -- select an option -- </option> */}
+                                <option value="Skill Swap/Trade">Skill Swap/Trade</option>
+                                <option value="Paid/Fee-based">Paid/Fee-based</option>
+                                <option value="Free/No charge">Free/No charge</option>
+                                <option value="I\'m Flexible!">I'm Flexible!</option>
+                            </select>
+
+                            <label className="listing-edit-form-label" htmlFor="Listing status">Status</label>
+                            <select className="form-control listing-dropdown" name="listing_status" onChange={handleChange} value={listing.listing_status}>
+                                {/* <option hidden> -- select an option -- </option> */}
+                                <option value="Active">Active</option>
+                                <option value="In Progress">In Progress</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Withdrawn">Withdrawn</option>
+                                <option value="Inactive">Inactive</option>
+                            </select>
+
+                            {/* <p>{errorMessages.category ? errorMessages.category : null}</p> */}
+                            <label className="listing-edit-form-label" htmlFor="Category">Category</label>
+                            <select className="form-control" name="category" value={listing.category} onChange={handleCategoryChange}>
+
                                 {<Categories />}
-                                </select>
-                                </div> 
-                            </div>
-                        </div><br />
-                        <button type="submit" className="button ">Edit listing</button>
+                            </select>
+                        </div>
+                        <button type="submit" className="button submit-listing">Edit listing</button>
                     </form>
                 </div>
-            
+
             </>
         )
     }
 
-        return (
-            <>
+    return (
+        <>
             {listing ? loaded() : <h2>Loading...</h2>}
-            </>
-        )
+        </>
+    )
 
 }
 
