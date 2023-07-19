@@ -42,27 +42,21 @@ function ContactUs(props) {
     return (
         <>
             <div className="contact">
-                <h2 className="page-title">Get in touch</h2>
-                <p className="page-info">Have a question or want to give us some feedback? Please use the form below!</p>
+                <h1 className="categories-header">Get in touch</h1>
+                <p className="listings-form-header">Have a question or want to give us some feedback? Please use the form below!</p>
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <div className="row">
-                            <div className="col">
-                                <label htmlFor="name">Full Name:</label>
+                        
+                                <label className="listing-edit-form-label" htmlFor="name">Full Name:</label>
                                 <input type="text" className="form-control" name="name" onChange={handleChange} placeholder="What's your full name?"/>
-                            </div>
-                            <div className="col">
-                                <label htmlFor="email">Email Address:</label>
+                            
+                                <label className="listing-edit-form-label" htmlFor="email">Email Address:</label>
                                 <input type="email" className="form-control" name="email" onChange={handleChange} placeholder="What's your email address?"/>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col">
-                            <label htmlFor="feedback"></label>
-                            <textarea className="form-control" name="feedback" rows="3" onChange={handleChange} placeholder="We'd love to hear from you. What do you want to share?"/><br />
-                            <button type="submit" className="button">Submit</button>
-                            </div>
-                        </div>
+                            
+                            <label className="listing-edit-form-label" htmlFor="feedback">What's on your mind?</label>
+                            <textarea className="form-control" name="feedback" rows="3" onChange={handleChange} placeholder="We'd love to hear from you. What do you want to share?"/>
+                            <button type="submit" className="button submit-contact-form">Submit</button>
+                        
                     </div>
                 </form>
             </div>
