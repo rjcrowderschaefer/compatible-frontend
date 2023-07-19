@@ -377,9 +377,13 @@ button {
   margin: 0px 10px 20px 10px;
 }
 
-/* select.listing-dropdown {
-  width: auto;
-} */
+.listings-form-header {
+  width: 90%;
+  font-weight: 600;
+  font-size: .9rem;
+  margin: 15px 0 0 15px;
+}
+
 
 #footer {
   background-color: #67727E; 

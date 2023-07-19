@@ -74,7 +74,8 @@ function ListingEdit(props) {
         return (
             <>
                 <div className="add-new-listing">
-                    <p className="page-intro">Use the form below to create a new listing to connect with our community to learn or share your skills!</p>
+                    <h1 className="categories-header">Edit your listing</h1>
+                    <p className="listings-form-header">Use the form below to create a new listing to connect with our community to learn or share your skills!</p>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
 

@@ -15,14 +15,16 @@ function ListingDelete() {
     return (
         <>
             <div className="delete-trip-conf">
-                <h2 className="page-title">Confirm listing deletion</h2>
-                <p className="page-intro">Additional page info if necessary.</p>
+                <h1 className="categories-header">Confirm listing deletion</h1>
+                <p className="listings-form-header">Are you sure you want to delete this listing?</p>
+                <div className="modify-listing">
                 <Link to='/listings'>
-                    <button className="delete btn btn-danger" onClick={deleteListing}>Yes, delete</button>
+                    <button className="submit-listing" onClick={deleteListing}>Yes, delete</button>
                 </Link>
                 <Link to={`/listings/${id}`}>
-                    <button className="cancel btn btn-secondary">No, cancel</button>
+                    <button className="edit-listing">No, cancel</button>
                 </Link>
+                </div>
             </div>
         </>
     )
