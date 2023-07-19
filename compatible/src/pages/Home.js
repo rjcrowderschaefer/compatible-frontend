@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { featuredListsLoader } from "../apiCalls";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 function Home() {
     const [featuredList, setFeaturedList] = useState([])
@@ -21,11 +23,13 @@ function Home() {
     return (
         <>
             <div className="home-hero">
-                <h1 id="h1-home">Gain knowledge by sharing knowledge</h1>
                 <div className="home-search-wrapper">
+                    <h1 id="h1-home">Gain knowledge by sharing knowledge</h1>
                     <div className="search-box">
-                        <div className="search-btn"></div>
-                        <input type="text" class="input_search" placeholder="I want to learn..." />
+                        <div className="search-btn">
+                        <div className="search-icon"><FontAwesomeIcon icon={faMagnifyingGlass} size="lg" /></div>
+                        </div>
+                        <input type="text" className="input-search" placeholder="I want to learn..." />
                     </div>
                 </div>
             </div>
