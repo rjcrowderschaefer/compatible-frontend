@@ -9,7 +9,6 @@ function CategoryDetails() {
     const fetchCategoryDetails = async () => {
         try {
             let data = await categoriesDetailLoader(id)
-            // data = await data.json();
             setCategory(data);
             console.log(data)
         } catch(err) {

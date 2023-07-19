@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router-dom'
-import { listingsLoader } from '../apiCalls';
+import { listingsDetailLoader } from '../apiCalls';
 
 function ListingDetails(props) {
     const categories = props.categories
@@ -9,8 +9,7 @@ function ListingDetails(props) {
     const [listing, setListing] = useState(null)
     const fetchListingDetails = async () => {
         try {
-            let data = await fetch(`http://localhost:8000/api/listings/${id}/`)
-            data = await data.json();
+            let data = await listingsDetailLoader(id)
             setListing(data);
         } catch (err) {
             console.log(err)

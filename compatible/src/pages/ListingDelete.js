@@ -1,16 +1,12 @@
 import { useParams, Link } from 'react-router-dom';
+import { listingsDeleteLoader } from '../apiCalls';
 
 function ListingDelete() {
     const {id} = useParams();
 
     async function deleteListing() {
         try {
-            await fetch (`http://localhost:8000/api/listings/${id}/`, {
-                method: "DELETE",
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            })
+            await listingsDeleteLoader(id)
         } catch(err) {
             console.log(err)
         }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { listingsPostLoader } from '../apiCalls';
 
 function CreateListing(props) {
     const categories = props.categories
@@ -66,13 +67,7 @@ function CreateListing(props) {
         e.preventDefault()
         if (validateSelect()) {
             try {
-                await fetch('http://localhost:8000/api/listings/', {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(listingForm)
-                })
+                await listingsPostLoader(listingForm)
                 e.target.reset();
                 navigate('/listings');
             } catch(err) {

@@ -31,7 +31,6 @@ function ContactUs(props) {
         try {
             e.preventDefault()
             await feedbackPostLoader(contactForm)
-            // getContactInfo();
             e.target.reset();
             navigate('/contact/thank-you');
         } catch(err) {

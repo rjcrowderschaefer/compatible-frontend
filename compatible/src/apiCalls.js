@@ -1,4 +1,3 @@
-// const URL = "http://localhost:8000";
 const URL = "https://compatible-backend.onrender.com"
 
 export const categoriesLoader = async () => {
@@ -23,6 +22,42 @@ export const listingsDetailLoader = async (id) => {
     const response = await fetch(URL + "/api/listings/" + id + "/");
     const listings = await response.json()
     return listings;
+}
+
+export const listingsPostLoader = async (listingForm) => {
+    const response = await fetch(URL + "/api/listings/",
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(listingForm)
+        });
+    const data = await response.json()
+}
+
+export const listingsDeleteLoader = async (id) => {
+    const response = await fetch(URL + "/api/listings/" + id + "/",
+        {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+    const listings = await response.json()
+    return listings;
+}
+
+export const listingsEditLoader = async (id, listing) => {
+    const response = await fetch (URL + "/api/listings/" + id + "/",
+    {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(listing)
+    });
+    const data = await response.json()
 }
 
 export const featuredListsLoader = async () => {

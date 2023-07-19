@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { listingsLoader } from '../apiCalls';
+import { listingsDetailLoader } from '../apiCalls';
+import { listingsEditLoader } from '../apiCalls';
 
 function ListingEdit(props) {
     const categories = props.categories
@@ -11,9 +12,7 @@ function ListingEdit(props) {
     
     async function getListing() {
         try {
-            let myListing = await fetch(`http://localhost:8000/api/listings/${id}/`);
-            // let myListing = await `${listingsLoader}/${id}`
-            myListing = await myListing.json()
+            let myListing = await listingsDetailLoader(id);
             setListing(myListing)
             console.log(myListing) 
         } catch(err) {
@@ -42,13 +41,7 @@ function ListingEdit(props) {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            await fetch (`http://localhost:8000/api/listings/${id}/`, {
-                method: "PUT",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(listing)
-            });
+            await listingsEditLoader(id, listing)
             return navigate(`/listings/${id}`)
         } catch(err) {
             console.log(err)
