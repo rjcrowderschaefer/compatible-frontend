@@ -321,6 +321,37 @@ button {
   font-size: .9rem;
 }
 
+.detail-page {
+  margin-left: 15px;
+}
+
+.modify-listing {
+  margin-left: 15px;
+  padding-right: 10px;
+}
+
+.edit-listing {
+  margin-right: 10px;
+  background-color: #FDF9F8;
+  border-radius: 3px;
+  border: 0.5px solid #EE9275;
+  appearance: none;
+  color: #EE9275;
+  padding: 5px 10px;
+  margin: 10px 10px 0 5px;
+}
+
+.delete-listing {
+  margin-right: 10px;
+  background-color: #FDF9F8;
+  border-radius: 3px;
+  border: 0.5px solid #EE9275;
+  appearance: none;
+  color: #EE9275;
+  padding: 5px 10px;
+  margin: 10px 10px 20px 5px;
+}
+
 #footer {
   background-color: #67727E; 
   position: absolute;
