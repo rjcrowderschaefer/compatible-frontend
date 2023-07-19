@@ -1,6 +1,13 @@
-function Footer() {
-    return(
-        <h1>Footer</h1>
+function Footer(props) {
+    return (
+        <>
+            <div className="footer-pin">
+                <div className="footer">
+                        <div className="footer-info">Built by RJ Crowder-Schaefer</div>
+                </div>
+            </div>
+            
+        </>
     )
 }
 

@@ -8,7 +8,8 @@ function CategoryDetails() {
     const [category, setCategory] = useState(null)
     const fetchCategoryDetails = async () => {
         try {
-            let data = await fetch (`http://localhost:8000/api/categories/${id}/`)
+            let data = await fetch(`https://compatible-backend.onrender.com/api/categories/${id}/`)
+            // let data = await `${categoriesLoader}/${id}/`
             data = await data.json();
             setCategory(data);
         } catch(err) {

@@ -1,4 +1,5 @@
-const URL = "http://localhost:8000";
+// const URL = "http://localhost:8000";
+const URL = "https://compatible-backend.onrender.com"
 
 export const categoriesLoader = async () => {
     const response = await fetch(URL + "/api/categories/");

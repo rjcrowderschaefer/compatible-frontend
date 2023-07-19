@@ -14,7 +14,16 @@ html {
 
 body {
   min-height: 75rem;
-padding-top: 4.5rem;
+padding-top: 3.6rem;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 20rem;
 }
 
 #nav-logo-name {
@@ -66,9 +75,32 @@ button {
 }
 
 .home-hero {
+  display: flex;
+  align-items: center;
   background-color: #EE9275;
-  background: rgba(238,146,117,0.7); 
+  background: rgba(238,146,117,0.7);
+  height: 300px;
 }
+
+#h1-home {
+  color: rgb(6 35 21);
+  text-align: left;
+
+}
+
+.home-page-block {
+  background-color: red;
+  height: 1000px;
+}
+
+#footer {
+  background-color: #67727E; 
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20rem;
+}
+
 
 @media only screen and (max-width: 480px) {
   

@@ -20,7 +20,16 @@ function Home() {
 
     return (
         <>
-            <h1 className="home-hero">Gain knowledge by sharing knowledge</h1>
+            <div className="home-hero">
+                <h1 id="h1-home">Gain knowledge by sharing knowledge</h1>
+                <div className="home-search-wrapper">
+                    <div className="search-box">
+                        <div className="search-btn"></div>
+                        <input type="text" class="input_search" placeholder="I want to learn..." />
+                    </div>
+                </div>
+            </div>
+            <p className="home-page-block">Content block</p>
             <div className="featured-listings">
                 {
                     featuredList && featuredList.map((list, idx) => {
