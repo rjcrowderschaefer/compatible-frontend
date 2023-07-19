@@ -11,7 +11,7 @@ function BrowseListings(props) {
                 const data = await listingsLoader()
                 setListingInfo(data)
                 console.log(data)
-            } catch(err) {
+            } catch (err) {
                 console.log(err);
             }
         }
@@ -21,24 +21,28 @@ function BrowseListings(props) {
 
     return (
         <>
-        <h1>Browse Listings Page</h1>
-        <h2>Add link to create new listing</h2>
-        <div className="listings">
-            {
-                listingInfo && listingInfo.map((listing, idx) => {
-                    return (
-                        <div className="listing-card" key={idx}>
-                        <img src={listing.listing_img1} alt="listing image"></img><br />
-                        {listing.listing_name}<br />
-                        {listing.listing_type}<br />
-                        {listing.listing_status}<br />
-                        {listing.category_name}<br />
-                        <h4><a href={`/listings/${listing.id}`}>View details</a></h4>
-                        </div>
-                    )
-                })
-            }
-        </div>
+            <h1 className="categories-header">View all listings</h1>
+            <h3 className="category-detail-desc add-new-listing">Don't see what you're looking for? Create a <a href="/listings/new">new listing</a></h3>
+            <div className="listings">
+                {
+                    listingInfo && listingInfo.map((listing, idx) => {
+                        return (
+                            <div className="listing-card-wrapper" key={idx}>
+                                <img className="category-detail-img" src={listing.listing_img1} alt="listing image"></img><br />
+                                <div className="listing-card-details">
+                                    <span className="listing-name">{listing.listing_name}</span><br />
+                                    <span className="listing-detail">Request Type: {listing.listing_type}</span><br />
+                                    <span className="listing-detail">Compensation: {listing.listing_comp_type}</span><br />
+                                    <span className="listing-detail">Status: {listing.listing_status}</span><br />
+                                    {/* {categories.category_name}<br /> */}
+                                    <span className="listing-view-more"><a href={`/listings/${listing.id}`}>View details</a></span>
+                                </div>
+                                <hr />
+                            </div>
+                        )
+                    })
+                }
+            </div>
         </>
     )
 }

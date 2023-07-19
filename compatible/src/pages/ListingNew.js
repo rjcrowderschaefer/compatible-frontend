@@ -18,31 +18,6 @@ function CreateListing(props) {
         category: 0,
     })
 
-    // async function getCategories() {
-    //     try {
-    //         let categoryList = await categoriesLoader();
-    //         setCategoryInfo(categoryList)
-    //     } catch(err) {
-    //         console.log(err)
-    //     }
-    // }
-
-    
-    // async function getCategories() {
-    //     try {
-    //         let categoryList = await categoriesLoader();
-    //         categoryList = await categoryList.json();
-    //         categoryInfo(categoryList)
-    //     } catch(err) {
-    //         console.log(err)
-    //     }
-    // }
-
-    // useEffect(() => {
-    //     // getCategories();
-    //     getCategories();
-    // }, []);
-
     const handleChange = (e) => {
         setListingForm({ ...listingForm, [e.target.name]: e.target.value});
     };
@@ -50,7 +25,6 @@ function CreateListing(props) {
     const handleCategoryChange = (e) => {
         setListingForm({ ...listingForm, category: e.target.value})
     };
-
 
     const validateSelect = () => {
         if (listingForm.category != 0) {

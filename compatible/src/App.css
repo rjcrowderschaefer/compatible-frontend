@@ -141,7 +141,7 @@ button {
   font-size: 1.1rem;
 }
 
-::-webkit-input-placeholder{
+::-webkit-input-placeholder {
   color: black;
 }
 
@@ -239,7 +239,7 @@ button {
   margin-left: 5px;
 }
 
-.instructions-icon{
+.instructions-icon {
   margin: 15px 0 0 5px;
 
 }
@@ -296,6 +296,29 @@ button {
 
 .category-card {
   margin-bottom: 10px;
+}
+
+.add-new-listing {
+  font-size: .8rem;
+  margin-top: 5px;
+}
+
+.listing-card-details {
+  margin-left: 20px;
+}
+
+.listing-name {
+  font-weight: 600;
+}
+
+.listing-detail {
+  margin-left: 5px;
+  font-size: .9rem;
+}
+
+.listing-view-more a {
+  margin-left: 5px;
+  font-size: .9rem;
 }
 
 #footer {
