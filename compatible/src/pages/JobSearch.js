@@ -72,42 +72,43 @@ function JobSearch() {
 
     return (
         <>
-            <div className="charging-locations">
-                <Row>
-                    <Col span={14}>
-                        <h2 className="page-title">List of jobs</h2>
-                        <p className="page-intro">Search for your next job opportunity</p>
-                    </Col>
-                    <Col span={10}>
+            <div className="indeed-job-search">
+                
+                    
+                        <h1 className="categories-header">List of jobs</h1>
+                        <p className="listings-form-header">Search for your next job opportunity</p>
+                    
+                    
                         <div className="location-search">
                             <form onSubmit={fetchJobs}>
                                 <label htmlFor="location"></label>
-                                <input type="text" placeholder="Enter keyword" name="keyword" id="keyword" onChange={(e) => setKeyword(e.target.value)} value={keyword} required />
-                                <input type="text" placeholder="Enter city or state" name="location" id="location" onChange={(e) => setLocation(e.target.value)} value={location} required />
-                                <input type="submit" id="search-button" value=">" />
+                                <input className="listing-edit-form-label keyword-field" type="text" placeholder="Enter keyword" name="keyword" id="keyword" onChange={(e) => setKeyword(e.target.value)} value={keyword} required />
+                                <input className="listing-edit-form-label location-field" type="text" placeholder="Enter city or state" name="location" id="location" onChange={(e) => setLocation(e.target.value)} value={location} required /><br />
+                                <input type="submit" className="submit-listing search-btn" value="Search" />
                             </form>
                         </div>
-                    </Col>
-                </Row>
+                    
+                
                 <hr />
-                <Row gutter={[25, 25]} justify="left" align="top">
+                
                     {isLoading ? (
-                        <p>Loading...</p>
+                        <p className="listings-form-header">Loading...</p>
                     ) : jobs && jobs.length > 0 ? (
                         jobs.map((job, idx) => (
-                            <Col span={6} key={idx}>
-                                <div className="charging-card">
-                                    <h3>Job title: {job.job_title}</h3>
-                                    <h6>Company: {job.company_name}</h6>
-                                    <h6>Location: {job.job_location}</h6>
-                                    {/* <h6>More info: {job.job_url}</h6> */}
+                            <Col span={24} key={idx}>
+                                <div className="job-search-card">
+                                    <h4 className="listing-name">Job title: {job.job_title}</h4>
+                                    <h6 className="listing-detail">Company: {job.company_name}</h6>
+                                    <h6 className="listing-detail">Location: {job.job_location}</h6>
+                                    <h6 className="listing-detail">Salary: {job.salary}</h6>
+                                    <h6 className="listing-detail">More info: <a href={job.job_url} target="_new">Full details</a></h6>
                                 </div>
                             </Col>
                         ))
                     ) : (
                         <p>{errorMessages.location ? errorMessages.location : null}</p>
                     )}
-                </Row>
+                
             </div>
         </>
     )

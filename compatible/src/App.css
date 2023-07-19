@@ -384,6 +384,27 @@ button {
   margin: 15px 0 0 15px;
 }
 
+.keyword-field {
+  display: inline;
+  margin-bottom: 5px;
+  margin-left: 15px;
+  width: 90%;
+}
+
+.location-field {
+  display: inline;
+  margin-left: 15px;
+  width: 90%;
+}
+
+.search-btn {
+  margin-top: 5px;
+  margin-left: 15px;
+}
+
+.job-search-card {
+  margin-left: 15px;
+}
 
 #footer {
   background-color: #67727E; 

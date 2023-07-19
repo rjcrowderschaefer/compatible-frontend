@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
     const [email, setEmail] = useState('');
@@ -6,10 +7,11 @@ const Signup = () => {
     const [password2, setPassword2] = useState('');
     const [errors, setErrors] = useState(false);
     const [loading, setLoading] = useState(true);
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (localStorage.getItem('token') !== null) {
-            window.location.replace('http://localhost:3000/dashboard');
+            navigate('/');
         } else {
             setLoading(false);
         }
@@ -36,7 +38,7 @@ const Signup = () => {
                 if (data.key) {
                     localStorage.clear();
                     localStorage.setItem('token', data.key);
-                    window.location.replace('http://localhost:3000/dashboard');
+                    navigate('/');
                 } else {
                     setEmail('');
                     setPassword1('');
