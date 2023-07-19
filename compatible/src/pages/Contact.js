@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { feedbackLoader } from '../apiCalls';
+import { feedbackPostLoader } from '../apiCalls';
 
 function ContactUs(props) {
     const navigate = useNavigate();
@@ -10,18 +10,18 @@ function ContactUs(props) {
         feedback: "",
     })
     
-    async function getContactInfo() {
-        try {
-            let myContactSubmissions = await feedbackLoader()
-            myContactSubmissions = await myContactSubmissions.json();
-        } catch(err) {
-            console.log(err);
-        }
-    }
+    // async function getContactInfo() {
+    //     try {
+    //         let myContactSubmissions = await feedbackLoader()
+    //         myContactSubmissions = await myContactSubmissions.json();
+    //     } catch(err) {
+    //         console.log(err);
+    //     }
+    // }
 
-    useEffect(() => {
-        getContactInfo();
-    }, [])
+    // useEffect(() => {
+    //     getContactInfo();
+    // }, [])
 
     const handleChange = (e) => {
         setContactForm({ ...contactForm, [e.target.name]: e.target.value});
@@ -30,14 +30,8 @@ function ContactUs(props) {
     async function handleSubmit(e) {
         try {
             e.preventDefault()
-            await fetch('http://localhost:8000/api/feedbacks/', {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify(contactForm)
-            })
-            getContactInfo();
+            await feedbackPostLoader(contactForm)
+            // getContactInfo();
             e.target.reset();
             navigate('/contact/thank-you');
         } catch(err) {

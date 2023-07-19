@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import { categoriesLoader } from '../apiCalls';
+import { categoriesDetailLoader } from '../apiCalls';
 
 function CategoryDetails() {
 
@@ -8,10 +8,10 @@ function CategoryDetails() {
     const [category, setCategory] = useState(null)
     const fetchCategoryDetails = async () => {
         try {
-            let data = await fetch(`https://compatible-backend.onrender.com/api/categories/${id}/`)
-            // let data = await `${categoriesLoader}/${id}/`
-            data = await data.json();
+            let data = await categoriesDetailLoader(id)
+            // data = await data.json();
             setCategory(data);
+            console.log(data)
         } catch(err) {
             console.log(err)
         }
